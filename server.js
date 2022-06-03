@@ -61,9 +61,9 @@ app.get('/api', (request, response) => {
 
 //now we want to create another path for our api
 app.get('/api/:atheleteName', (request, response) =>{
-   const atheleteName = request.params.atheleteName.toLowerCase()
-   if(athletes[atheleteName]){
-    response.json(athletes[atheleteName])
+   const athleteName = request.params.atheleteName.toLowerCase()
+   if(athletes[athleteName]){
+    response.json(athletes[athleteName])
    }else{
        response.json(athletes['not one of the best'])
    }
