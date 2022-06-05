@@ -3,7 +3,7 @@ document.querySelector('button').addEventListener('click', apiRequest)
 async function apiRequest(){
     const athleteName = document.querySelector('input').value
     try{
-        const response = await fetch(`https://simple-rapper-api.herokuapp.com/api/${athleteName}`)
+        const response = await fetch(`https://athlete-names-api.herokuapp.com/api/${athleteName}`)
         const data = await response.json()
 
         console.log(data)

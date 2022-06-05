@@ -2,7 +2,10 @@
 const express = require('express')
 // we need something to hold express for us so we can actively use the methods that comes with express
 const app = express() // we stroing express into app
+const cors = require('cors')
 const PORT = 3000 // related to line 11
+app.use(cors())
+
 //now lets create an object for these athletes
 const athletes = {
     'lebron james':{
