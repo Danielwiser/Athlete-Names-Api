@@ -1,7 +1,7 @@
 // since i will be using express for the app, i need to make sure my app has access to express
 const express = require('express')
 // we need something to hold express for us so we can actively use the methods that comes with express
-const app = express() // we stroing express into app
+const app = express() //defines an event handler that is used to handle HTTP GET requests made to the application's / root:
 const cors = require('cors')
 const PORT = 3000 // related to line 11
 app.use(cors())
@@ -53,10 +53,13 @@ const athletes = {
 }
 
 
-// we need to setup my server to hear a request and generate a response
+// we need to setup my server to hear a request and generate a response.
+//
 app.get('/', (request, response)=>{
     response.sendFile(__dirname + '/index.html') //sending html file
-})// we can pass in what we are looking for by creating a path with a forward slash....This is now a get request
+})//The event handler function accepts two parameters(request, response). The first request parameter contains all of the 
+//information of the HTTP request, and the second response parameter is used to define how the request is responded to.
+// we can pass in what we are looking for by creating a path with a forward slash....This is now a get request
 
 app.get('/api', (request, response) => {
     response.json(athletes)
